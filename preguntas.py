@@ -230,7 +230,7 @@ def pregunta_12():
     df_respuesta = aux.groupby("_c0")["_c5"].apply(list)
     df_respuesta = df_respuesta.reset_index()
     df_respuesta["_c5"] = [sorted(i) for i in df_respuesta["_c5"]]
-    df_respuesta["_c5"] = [':'.join(map(str,i)) for i in df_respuesta["_c5"]]
+    df_respuesta["_c5"] = [','.join(map(str,i)) for i in df_respuesta["_c5"]]
 
     return df_respuesta
 
