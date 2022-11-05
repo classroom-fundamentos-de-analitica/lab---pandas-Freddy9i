@@ -66,7 +66,7 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    return tbl0.groupby(["_c1"])[["_c2"]].mean()
+    return tbl0.groupby(["_c1"])[["_c2"]].mean().squeeze()
 
 
 def pregunta_05():
@@ -174,14 +174,12 @@ def pregunta_10():
 
     df_respuesta = tbl0.groupby(["_c1" ])["_c2"].apply(list)
     df_respuesta = df_respuesta.reset_index()
-    #df_respuesta = df_respuesta.rename(columns={'_c1': '_c0', '_c2': '_c1'})
     
     df_respuesta["_c2"] = [sorted(i) for i in df_respuesta["_c2"]]
     df_respuesta["_c2"] = [':'.join(map(str, i)) for i in df_respuesta["_c2"]]
-    df_respuesta.set_index("_c1")
 
-    return df_respuesta
-print(pregunta_10())
+    return pd.DataFrame(df_respuesta).set_index("_c1")
+
 
 def pregunta_11():
     """
