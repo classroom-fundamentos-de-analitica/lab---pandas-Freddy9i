@@ -180,7 +180,7 @@ def pregunta_10():
     df_respuesta["_c1"] = [':'.join(map(str, i)) for i in df_respuesta["_c1"]]
 
     return df_respuesta
-print(pregunta_10())
+
 
 def pregunta_11():
     """
