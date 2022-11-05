@@ -66,7 +66,7 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    return tbl0.groupby(["_c1"])[["_c2"]].mean().reset_index()
+    return tbl0.groupby(["_c1"])[["_c2"]].mean()
 
 
 def pregunta_05():
@@ -178,6 +178,7 @@ def pregunta_10():
     
     df_respuesta["_c1"] = [sorted(i) for i in df_respuesta["_c1"]]
     df_respuesta["_c1"] = [':'.join(map(str, i)) for i in df_respuesta["_c1"]]
+    df_respuesta.set_index("_c0")
 
     return df_respuesta
 
