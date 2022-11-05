@@ -178,10 +178,10 @@ def pregunta_10():
     
     df_respuesta["_c2"] = [sorted(i) for i in df_respuesta["_c2"]]
     df_respuesta["_c2"] = [':'.join(map(str, i)) for i in df_respuesta["_c2"]]
-    #df_respuesta.set_index("_c0")
+    df_respuesta.set_index("_c1")
 
     return df_respuesta
-
+print(pregunta_10())
 
 def pregunta_11():
     """
